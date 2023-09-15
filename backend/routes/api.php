@@ -69,9 +69,3 @@ Route::put('/user/{user_id}/remove-point', function ($user_id) {
 
 	return $user;
 });
-
-
-// curl -H "Content-type: application/json" -d '{"name": "user test 1", "age":36, "address": "345 Madison Ave"}' http://springfinancial.local/api/user
-// curl -X DELETE http://springfinancial.local/api/user/2
-// curl -X PUT http://springfinancial.local/api/user/3/add-point
-// curl http://springfinancial.local/api/user/3

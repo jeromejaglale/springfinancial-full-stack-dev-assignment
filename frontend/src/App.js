@@ -47,7 +47,21 @@ export function App() {
 		setAddress('');
 
 		mutate(ENDPOINT);
-		// toggleProductForm();
+  }
+
+  async function addPoint(userId, event) {
+		event.preventDefault();
+
+		const url = `${ENDPOINT}/${userId}/add-point`;
+		const response = await fetch(url, {
+		    method: 'PUT'
+		  });
+
+		const json = await response.json();
+
+		// TODO error handling
+
+		mutate(ENDPOINT);
   }
 
   return (
@@ -80,7 +94,7 @@ export function App() {
 									</td>
 									<td>{user.name}</td>
 									<td>
-										<a href="">Add Point</a>
+										<a href="" onClick={(e) => addPoint(user.id, e)}>Add Point</a>
 									</td>
 									<td>
 										<a href="">Subtract Point</a>

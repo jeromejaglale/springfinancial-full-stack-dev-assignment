@@ -24,6 +24,10 @@ Route::get('/user/{user_id}', function ($user_id){
 Route::post('/user', function (Request $request) {
 	$user_data = $request->json()->all();
 
+	if(isset($user_data['age']) && $user_data['age'] == '') {
+		$user_data['age'] = null;
+	}
+
 	$user = User::create($user_data);
 
 	return $user;

@@ -12,15 +12,42 @@ const ENDPOINT = 'http://springfinancial.local/api/user';
 
 export function App() {
 	const [nameFilter, setNameFilter] = React.useState('');
+	const [sortField, setSortField] = React.useState('points');
 
   // status: idle | loading | success | error
   const [status, setStatus] = React.useState('idle');
 	const { data, isLoading, error } = useSWR(ENDPOINT, fetcher);
 
 	var userList = data;
-	if(nameFilter) {
-		userList = userList.filter(user => user.name.search(new RegExp(nameFilter, "i")) !== -1);
+
+	if(userList) {
+		// filter user list by name
+		if(nameFilter) {
+			userList = userList.filter(user => user.name.search(new RegExp(nameFilter, "i")) !== -1);
+		}
+
+		// sort user list
+		if(sortField === 'points') {
+			userList.sort((u1, u2) => u1.points - u2.points);
+		}
+		else {
+			userList.sort((u1, u2) => {
+				value1 = u1.name.toUpperCase();
+				value2 = u2.name.toUpperCase();
+
+				if (value1 < value2) {
+				  return -1;
+				}
+
+				if (value1 > value2) {
+				  return 1;
+				}
+
+				return 0;
+			});
+		}
 	}
+
 
 	// user form
   const [name, setName] = React.useState('');
@@ -122,10 +149,14 @@ export function App() {
 						<thead>
 							<tr>
 								<th></th>
-								<th>Name</th>
+								<th>
+									<button onClick={(e) => setSortField('name')}>Name</button>
+								</th>
 								<th></th>
 								<th></th>
-								<th>Points</th>
+								<th>
+									<button onClick={(e) => setSortField('points')}>Points</button>
+								</th>
 							</tr>
 						</thead>
 						<tbody>

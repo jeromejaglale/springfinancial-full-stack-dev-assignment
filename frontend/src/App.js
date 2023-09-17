@@ -64,6 +64,21 @@ export function App() {
 		mutate(ENDPOINT);
   }
 
+  async function removePoint(userId, event) {
+		event.preventDefault();
+
+		const url = `${ENDPOINT}/${userId}/remove-point`;
+		const response = await fetch(url, {
+		    method: 'PUT'
+		  });
+
+		const json = await response.json();
+
+		// TODO error handling
+
+		mutate(ENDPOINT);
+  }
+
   return (
     <>
 	    {isLoading && (
@@ -97,7 +112,7 @@ export function App() {
 										<a href="" onClick={(e) => addPoint(user.id, e)}>Add Point</a>
 									</td>
 									<td>
-										<a href="">Subtract Point</a>
+										<a href="" onClick={(e) => removePoint(user.id, e)}>Remove Point</a>
 									</td>
 									<td>{user.points}</td>
 								</tr>

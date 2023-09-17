@@ -38,6 +38,8 @@ Route::delete('/user/{user_id}', function ($user_id) {
 	}
 
 	$user->delete();
+
+	return new stdClass();
 });
 
 // add point

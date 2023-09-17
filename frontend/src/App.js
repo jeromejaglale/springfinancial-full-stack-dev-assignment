@@ -18,7 +18,7 @@ export function App() {
 
 	// user form
   const [name, setName] = React.useState('');
-  const [age, setAge] = React.useState();
+  const [age, setAge] = React.useState('');
   const [address, setAddress] = React.useState('');
 
   const { mutate } = useSWRConfig()
@@ -79,6 +79,22 @@ export function App() {
 		mutate(ENDPOINT);
   }
 
+  async function deleteUser(userId, event) {
+		event.preventDefault();
+
+		const url = `${ENDPOINT}/${userId}`;
+		console.log(url);
+		const response = await fetch(url, {
+		    method: 'DELETE'
+		  });
+
+		const json = await response.json();
+
+		// TODO error handling
+
+		mutate(ENDPOINT);
+  }
+
   return (
     <>
 	    {isLoading && (
@@ -105,7 +121,7 @@ export function App() {
 							{data.map(user =>
 								<tr key={user.id}>
 									<td>
-										<a href="">Delete</a>
+										<a href="" onClick={(e) => deleteUser(user.id, e)}>Delete</a>
 									</td>
 									<td>{user.name}</td>
 									<td>

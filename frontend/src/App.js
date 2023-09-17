@@ -11,10 +11,16 @@ async function fetcher(endpoint) {
 const ENDPOINT = 'http://springfinancial.local/api/user';
 
 export function App() {
+	const [nameFilter, setNameFilter] = React.useState('');
+
   // status: idle | loading | success | error
   const [status, setStatus] = React.useState('idle');
 	const { data, isLoading, error } = useSWR(ENDPOINT, fetcher);
-  
+
+	var userList = data;
+	if(nameFilter) {
+		userList = userList.filter(user => user.name.search(new RegExp(nameFilter, "i")) !== -1);
+	}
 
 	// user form
   const [name, setName] = React.useState('');
@@ -105,8 +111,13 @@ export function App() {
 		    <p>Sorry, the users could not be retrieved.</p>
 		  )}
 
-			{data && (
+			{userList && (
 	      <>
+					<form>
+					  <label htmlFor="nameFilter">Filter by Name:</label>
+					  <input type="text" id="nameFilter" value={nameFilter} onChange={(e) => setNameFilter(e.target.value)} />
+					</form>
+
 					<table>
 						<thead>
 							<tr>
@@ -118,7 +129,7 @@ export function App() {
 							</tr>
 						</thead>
 						<tbody>
-							{data.map(user =>
+							{userList.map(user =>
 								<tr key={user.id}>
 									<td>
 										<a href="" onClick={(e) => deleteUser(user.id, e)}>Delete</a>

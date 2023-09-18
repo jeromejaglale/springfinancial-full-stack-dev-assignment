@@ -3,6 +3,7 @@ import useSWR from 'swr';
 import { useSWRConfig } from 'swr';
 import { USER_ENDPOINT } from '../../constants';
 import { fetcher } from '../../utils';
+import { Dialog } from '@headlessui/react';
 
 function UserList() {
 	const [nameFilter, setNameFilter] = React.useState('');
@@ -14,6 +15,11 @@ function UserList() {
 	const { data, isLoading, error } = useSWR(USER_ENDPOINT, fetcher);
 
 	const userList = data;
+
+	const [user, setUser] = React.useState();
+
+	// user popup
+	let [isOpen, setIsOpen] = React.useState(false);
 
 	if(userList) {
 		// filter user list by name
@@ -91,8 +97,39 @@ function UserList() {
 		mutate(USER_ENDPOINT);
   }
 
+  async function showUser(userId, event) {
+		event.preventDefault();
+
+		setUser(null);
+		const url = `${USER_ENDPOINT}/${userId}`;
+		console.log(url);
+		const response = await fetch(url);
+
+		const json = await response.json();
+
+		// TODO error handling
+
+setIsOpen(true);
+		console.log(json);
+		setUser(json);
+
+		// TODO show user popup
+  }
+
   return (
     <>
+    { user && (
+			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+				<Dialog.Panel>
+					<Dialog.Title>{user.name}</Dialog.Title>
+					<p>Points: {user.points} points</p>
+					<p>Age: {user.age} years</p>
+					<p>Address: {user.address}</p>
+					<button onClick={() => setIsOpen(false)}>Close</button>
+				</Dialog.Panel>
+			</Dialog>
+    )}
+
 	    {isLoading && (
 		    <p>Loading users…</p>
 		  )}
@@ -128,7 +165,9 @@ function UserList() {
 									<td>
 										<a href="" onClick={(e) => deleteUser(user.id, e)}>Delete</a>
 									</td>
-									<td>{user.name}</td>
+									<td>
+										<a href="" onClick={(e) => showUser(user.id, e)}>{user.name}</a>
+									</td>
 									<td>
 										<a href="" onClick={(e) => addPoint(user.id, e)}>Add Point</a>
 									</td>

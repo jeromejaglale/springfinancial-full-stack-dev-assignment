@@ -1,26 +1,14 @@
 import React from 'react';
+
 import useSWR from 'swr';
 import { useSWRConfig } from 'swr';
+
 import { USER_ENDPOINT } from '../../constants';
 import { fetcher } from '../../utils';
-import { Dialog } from '@headlessui/react';
 
-function UserList() {
-	const [nameFilter, setNameFilter] = React.useState('');
-	const [sortField, setSortField] = React.useState('points');
+import UserDetails from '../UserDetails';
 
-  // status: idle | loading | success | error
-  const [status, setStatus] = React.useState('idle');
-
-	const { data, isLoading, error } = useSWR(USER_ENDPOINT, fetcher);
-
-	const userList = data;
-
-	const [user, setUser] = React.useState();
-
-	// user popup
-	let [isOpen, setIsOpen] = React.useState(false);
-
+function filterAndSortUserList(userList, nameFilter, sortField) {
 	if(userList) {
 		// filter user list by name
 		if(nameFilter) {
@@ -48,6 +36,20 @@ function UserList() {
 			});
 		}
 	}
+
+	return userList;
+}
+
+function UserList() {
+	const [nameFilter, setNameFilter] = React.useState('');
+	const [sortField, setSortField] = React.useState('points');
+
+	// user for user popup
+	const [user, setUser] = React.useState(null);
+
+	// fetch users
+	const { data, isLoading, error } = useSWR(USER_ENDPOINT, fetcher);
+	const userList = filterAndSortUserList(data, nameFilter, sortField);
 
   const { mutate } = useSWRConfig()
 
@@ -85,7 +87,6 @@ function UserList() {
 		event.preventDefault();
 
 		const url = `${USER_ENDPOINT}/${userId}`;
-		console.log(url);
 		const response = await fetch(url, {
 		    method: 'DELETE'
 		  });
@@ -100,35 +101,21 @@ function UserList() {
   async function showUser(userId, event) {
 		event.preventDefault();
 
-		setUser(null);
 		const url = `${USER_ENDPOINT}/${userId}`;
-		console.log(url);
 		const response = await fetch(url);
-
 		const json = await response.json();
 
 		// TODO error handling
 
-setIsOpen(true);
-		console.log(json);
 		setUser(json);
-
-		// TODO show user popup
   }
 
   return (
     <>
-    { user && (
-			<Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-				<Dialog.Panel>
-					<Dialog.Title>{user.name}</Dialog.Title>
-					<p>Points: {user.points} points</p>
-					<p>Age: {user.age} years</p>
-					<p>Address: {user.address}</p>
-					<button onClick={() => setIsOpen(false)}>Close</button>
-				</Dialog.Panel>
-			</Dialog>
-    )}
+		  {/* user details popup */}
+	    {user && (
+		    <UserDetails user={user} setUser={setUser} />
+		  )}
 
 	    {isLoading && (
 		    <p>Loading users…</p>
@@ -138,6 +125,7 @@ setIsOpen(true);
 		    <p>Sorry, the users could not be retrieved.</p>
 		  )}
 
+		  {/* user list */}
 			{userList && (
 	      <>
 					<form>

@@ -28,7 +28,7 @@ export function App() {
 
 		// sort user list
 		if(sortField === 'points') {
-			userList.sort((u1, u2) => u1.points - u2.points);
+			userList.sort((u1, u2) => u2.points - u1.points);
 		}
 		else {
 			userList.sort((u1, u2) => {

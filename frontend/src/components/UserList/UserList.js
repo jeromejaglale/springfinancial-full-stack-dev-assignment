@@ -1,6 +1,7 @@
 import React from 'react';
 import useSWR from 'swr';
 import { useSWRConfig } from 'swr';
+import { USER_ENDPOINT } from '../../constants';
 
 async function fetcher(endpoint) {
   const response = await fetch(endpoint);
@@ -8,15 +9,13 @@ async function fetcher(endpoint) {
   return json;
 }
 
-const ENDPOINT = 'http://springfinancial.local/api/user';
-
 function UserList() {
 	const [nameFilter, setNameFilter] = React.useState('');
 	const [sortField, setSortField] = React.useState('points');
 
   // status: idle | loading | success | error
   const [status, setStatus] = React.useState('idle');
-	const { data, isLoading, error } = useSWR(ENDPOINT, fetcher);
+	const { data, isLoading, error } = useSWR(USER_ENDPOINT, fetcher);
 
 	var userList = data;
 
@@ -53,7 +52,7 @@ function UserList() {
 async function addPoint(userId, event) {
 		event.preventDefault();
 
-		const url = `${ENDPOINT}/${userId}/add-point`;
+		const url = `${USER_ENDPOINT}/${userId}/add-point`;
 		const response = await fetch(url, {
 		    method: 'PUT'
 		  });
@@ -62,13 +61,13 @@ async function addPoint(userId, event) {
 
 		// TODO error handling
 
-		mutate(ENDPOINT);
+		mutate(USER_ENDPOINT);
   }
 
   async function removePoint(userId, event) {
 		event.preventDefault();
 
-		const url = `${ENDPOINT}/${userId}/remove-point`;
+		const url = `${USER_ENDPOINT}/${userId}/remove-point`;
 		const response = await fetch(url, {
 		    method: 'PUT'
 		  });
@@ -77,13 +76,13 @@ async function addPoint(userId, event) {
 
 		// TODO error handling
 
-		mutate(ENDPOINT);
+		mutate(USER_ENDPOINT);
   }
 
   async function deleteUser(userId, event) {
 		event.preventDefault();
 
-		const url = `${ENDPOINT}/${userId}`;
+		const url = `${USER_ENDPOINT}/${userId}`;
 		console.log(url);
 		const response = await fetch(url, {
 		    method: 'DELETE'
@@ -93,7 +92,7 @@ async function addPoint(userId, event) {
 
 		// TODO error handling
 
-		mutate(ENDPOINT);
+		mutate(USER_ENDPOINT);
   }
 
   return (

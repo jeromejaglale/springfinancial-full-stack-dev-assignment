@@ -1,14 +1,13 @@
 import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { useSWRConfig } from 'swr';
+import { USER_ENDPOINT } from '../../constants';
 
 async function fetcher(endpoint) {
   const response = await fetch(endpoint);
   const json = await response.json();
   return json;
 }
-
-const ENDPOINT = 'http://springfinancial.local/api/user';
 
 function AddUserForm() {
 	let [isOpen, setIsOpen] = React.useState(false);
@@ -28,7 +27,7 @@ function AddUserForm() {
 			address: address,
 		};
 
-		const response = await fetch(ENDPOINT, {
+		const response = await fetch(USER_ENDPOINT, {
 		    method: 'POST',
 		    body: JSON.stringify(data),
 		  });
@@ -37,7 +36,7 @@ function AddUserForm() {
 
 		// TODO error handling
 
-		mutate(ENDPOINT);
+		mutate(USER_ENDPOINT);
 		setIsOpen(false);
 
 		// clear form

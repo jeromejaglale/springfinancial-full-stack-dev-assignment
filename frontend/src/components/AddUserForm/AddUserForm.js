@@ -2,12 +2,7 @@ import React from 'react';
 import { Dialog } from '@headlessui/react';
 import { useSWRConfig } from 'swr';
 import { USER_ENDPOINT } from '../../constants';
-
-async function fetcher(endpoint) {
-  const response = await fetch(endpoint);
-  const json = await response.json();
-  return json;
-}
+import { fetcher } from '../../utils';
 
 function AddUserForm() {
 	let [isOpen, setIsOpen] = React.useState(false);

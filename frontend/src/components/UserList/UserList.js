@@ -2,12 +2,7 @@ import React from 'react';
 import useSWR from 'swr';
 import { useSWRConfig } from 'swr';
 import { USER_ENDPOINT } from '../../constants';
-
-async function fetcher(endpoint) {
-  const response = await fetch(endpoint);
-  const json = await response.json();
-  return json;
-}
+import { fetcher } from '../../utils';
 
 function UserList() {
 	const [nameFilter, setNameFilter] = React.useState('');
@@ -15,9 +10,10 @@ function UserList() {
 
   // status: idle | loading | success | error
   const [status, setStatus] = React.useState('idle');
+
 	const { data, isLoading, error } = useSWR(USER_ENDPOINT, fetcher);
 
-	var userList = data;
+	const userList = data;
 
 	if(userList) {
 		// filter user list by name
@@ -49,7 +45,7 @@ function UserList() {
 
   const { mutate } = useSWRConfig()
 
-async function addPoint(userId, event) {
+	async function addPoint(userId, event) {
 		event.preventDefault();
 
 		const url = `${USER_ENDPOINT}/${userId}/add-point`;

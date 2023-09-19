@@ -13,7 +13,7 @@ function filterAndSortUserList(userList, nameFilter, sortField) {
 	if(userList) {
 		// filter user list by name
 		if(nameFilter) {
-			userList = userList.filter(user => user.name.search(new RegExp(nameFilter, "i")) !== -1);
+			userList = userList.filter(user => user.name.search(new RegExp(nameFilter, 'i')) !== -1);
 		}
 
 		// sort user list

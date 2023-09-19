@@ -42,8 +42,15 @@ body {
   font-family: 'Calistoga', serif;
 }
 
-button {
+button, input[type=submit] {
   padding: 5px 10px 3px 10px;
+}
+
+input[type="text"], input[type="number"] {
+  padding: 5px;
+  display: block;
+  margin-bottom: 1rem;
+  color: #515151;
 }
 
 button.icon {
@@ -116,6 +123,52 @@ table tbody button {
   margin-right: 10px;
 }
 
-input {
-  padding: 5px;
+.popup_wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;  
+  display: grid;
+  place-content: center;
+  /*background-color: white;*/
+  /*opacity: 0.8;*/
+}
+
+.popup {
+  border-radius: 1rem;
+  background-color: #febe7e;
+  padding: 1rem 2rem 1rem 2rem;
+  border: 1rem #a75265 solid;
+}
+
+.popup h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.popup .buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.popup .buttons .secondary {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popup p {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.popup p.points {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }

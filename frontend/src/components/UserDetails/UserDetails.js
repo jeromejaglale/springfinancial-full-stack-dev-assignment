@@ -9,13 +9,16 @@ import { Dialog } from '@headlessui/react';
 function UserDetails({user, setUser}) {
   return (
   	<>
-			<Dialog open={user != null} onClose={() => setUser(null)}>
-				<Dialog.Panel>
+			<Dialog className="popup_wrapper" open={user != null} onClose={() => setUser(null)}>
+				<Dialog.Panel className="popup">
 					<Dialog.Title>{user.name}</Dialog.Title>
-					<p>Points: {user.points} points</p>
+					<p className="points">{user.points} points</p>
 					<p>Age: {user.age} years</p>
 					<p>Address: {user.address}</p>
-					<button onClick={() => setUser(null)}>Close</button>
+
+					<p class="buttons">
+			      <button className="primary" onClick={() => setUser(null)}>Close</button>
+			    </p>
 				</Dialog.Panel>
 			</Dialog>
   	</>

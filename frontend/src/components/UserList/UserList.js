@@ -9,6 +9,12 @@ import { fetcher } from '../../utils';
 
 import UserDetails from '../UserDetails';
 
+import {
+  X,
+  Plus,
+  Minus,
+} from 'react-feather';
+
 function filterAndSortUserList(userList, nameFilter, sortField) {
 	if(userList) {
 		// filter user list by name
@@ -145,16 +151,23 @@ function UserList() {
 							{userList.map(user =>
 								<tr key={user.id}>
 									<td>
-										<button onClick={() => deleteUser(user.id)}>Delete</button>
+										<button title="Remove User" class="icon" onClick={() => deleteUser(user.id)}>
+											<X />
+										</button>
+
 									</td>
 									<td>
 										<a href="" onClick={(e) => showUser(user.id, e)}>{user.name}</a>
 									</td>
 									<td>
-										<button onClick={() => addPoint(user.id)}>Add Point</button>
+										<button title="Add Point" class="icon" onClick={() => addPoint(user.id)}>
+											<Plus />
+										</button>
 									</td>
 									<td>
-										<button onClick={() => removePoint(user.id)}>Remove Point</button>
+										<button title="Remove Point" class="icon" onClick={() => removePoint(user.id)}>
+											<Minus />
+										</button>
 									</td>
 									<td>{user.points}</td>
 								</tr>

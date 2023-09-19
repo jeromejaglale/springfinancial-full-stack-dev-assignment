@@ -41,6 +41,13 @@ button {
   padding: 5px 10px 3px 10px;
 }
 
+button.icon {
+  display: grid;
+  place-content: center;
+  width: 48px;
+  height: 48px;
+}
+
 table {
 }
 

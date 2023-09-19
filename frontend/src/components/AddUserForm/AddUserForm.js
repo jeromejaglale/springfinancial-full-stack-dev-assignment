@@ -1,4 +1,6 @@
 import React from 'react';
+import * as styles from './AddUserForm.module.css';
+
 import { Dialog } from '@headlessui/react';
 import { useSWRConfig } from 'swr';
 import { USER_ENDPOINT } from '../../constants';

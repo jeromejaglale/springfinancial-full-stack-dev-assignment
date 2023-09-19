@@ -1,4 +1,6 @@
 import React from 'react';
+import * as styles from './UserDetails.module.css';
+
 import { USER_ENDPOINT } from '../../constants';
 import { fetcher } from '../../utils';
 

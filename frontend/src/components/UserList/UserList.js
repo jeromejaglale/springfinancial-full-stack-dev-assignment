@@ -1,4 +1,5 @@
 import React from 'react';
+import * as styles from './UserList.module.css';
 
 import useSWR from 'swr';
 import { useSWRConfig } from 'swr';

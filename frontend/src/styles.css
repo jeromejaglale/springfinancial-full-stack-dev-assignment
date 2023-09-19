@@ -32,11 +32,13 @@ p, h1, h2, h3, h4, h5, h6 {
 /* End of CSS Reset*/
 
 body {
-  padding: 2rem;
-  font-size: 2rem;
+  padding: 1rem;
+  /*font-size: 2rem;*/
+  min-width: 320px;
 }
 
 button {
+  padding: 5px 10px 3px 10px;
 }
 
 table {
@@ -47,4 +49,8 @@ table td {
 }
 
 table td.name {
+}
+
+input {
+  padding: 5px;
 }

@@ -124,8 +124,7 @@ function UserList() {
 			{userList && (
 	      <>
 					<form>
-					  <label htmlFor="nameFilter">Filter by Name:</label>
-					  <input type="text" id="nameFilter" value={nameFilter} onChange={(e) => setNameFilter(e.target.value)} />
+					  <input type="text" id="nameFilter" value={nameFilter} onChange={(e) => setNameFilter(e.target.value)} placeholder="Filter by name" />
 					</form>
 
 					<table>

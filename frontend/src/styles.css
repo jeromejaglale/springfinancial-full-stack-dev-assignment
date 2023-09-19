@@ -33,8 +33,13 @@ p, h1, h2, h3, h4, h5, h6 {
 
 body {
   padding: 1rem;
-  /*font-size: 2rem;*/
+  font-size: 1.2rem;
   min-width: 320px;
+  max-width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #57385c;
+  font-family: 'Calistoga', serif;
 }
 
 button {
@@ -46,16 +51,69 @@ button.icon {
   place-content: center;
   width: 48px;
   height: 48px;
+  padding: 4px;
 }
 
 table {
+  background-color: #a75265;
+  border-radius: 13px;
+  padding: 15px;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+  overflow: hidden;
 }
 
-table td {
-  padding: 10px 40px 10px 40px;
+table tr {
+  background-color: #febe7e;
+}
+
+table tr:last-child td {
+  padding-bottom: 30px;
+}
+
+table th {
+  padding-top: 10px;
+  font-weight: normal;
+}
+
+table tr td:first-child {
+  padding-left: 60px;
+}
+
+table tr td:last-child {
+  padding-right: 60px;
 }
 
 table td.name {
+  width: 100%;
+}
+
+table td.name a {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+table td.points {
+  width: 100%;
+  white-space: nowrap;
+}
+
+table td.name, table td.points {
+  text-align: center;
+  padding: 10px 40px 10px 40px;
+  font-size: 2rem;
+}
+
+
+table tbody button {
+  border-radius: 10px;
+  background-color: #ec7263;
+  border: 0;
+  color: #febe7e;
+  margin-right: 10px;
 }
 
 input {

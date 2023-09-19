@@ -152,24 +152,24 @@ function UserList() {
 								<tr key={user.id}>
 									<td>
 										<button title="Remove User" class="icon" onClick={() => deleteUser(user.id)}>
-											<X />
+											<X size={100} />
 										</button>
 
 									</td>
-									<td>
+									<td class="name">
 										<a href="" onClick={(e) => showUser(user.id, e)}>{user.name}</a>
 									</td>
 									<td>
 										<button title="Add Point" class="icon" onClick={() => addPoint(user.id)}>
-											<Plus />
+											<Plus size={100} />
 										</button>
 									</td>
 									<td>
 										<button title="Remove Point" class="icon" onClick={() => removePoint(user.id)}>
-											<Minus />
+											<Minus size={100} />
 										</button>
 									</td>
-									<td>{user.points}</td>
+									<td class="points">{user.points} points</td>
 								</tr>
 							)}
 						</tbody>

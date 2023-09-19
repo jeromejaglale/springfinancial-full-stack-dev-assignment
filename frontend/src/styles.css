@@ -86,6 +86,27 @@ table th {
   font-weight: normal;
 }
 
+table th button {
+  border: none;
+  cursor: pointer;
+  background-color: #f3d3b6;
+  border-radius: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: gray;
+}
+
+table th button:hover {
+  background-color: white;
+  color: black;
+}
+
+table th button.selected {
+  background-color: #e9e9ed;
+  color: black;
+  cursor: default;
+}
+
 table tr td:first-child {
   padding-left: 60px;
 }
@@ -102,6 +123,13 @@ table td.name a {
   text-decoration: none;
   color: black;
   display: block;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+table td.name a:hover {
+  background-color: #f3d3b6;
 }
 
 table td.points {
@@ -111,7 +139,7 @@ table td.points {
 
 table td.name, table td.points {
   text-align: center;
-  padding: 10px 40px 10px 40px;
+  padding: 2px 40px 2px 40px;
   font-size: 2rem;
 }
 
@@ -122,6 +150,10 @@ table tbody button {
   border: 0;
   color: #febe7e;
   margin-right: 10px;
+}
+
+table tbody button:hover {
+  background-color: #a65045;
 }
 
 .popup_wrapper {

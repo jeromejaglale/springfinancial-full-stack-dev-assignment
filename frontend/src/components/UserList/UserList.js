@@ -138,12 +138,12 @@ function UserList() {
 							<tr>
 								<th></th>
 								<th>
-									<button onClick={(e) => setSortField('name')}>Name</button>
+									<button className={sortField === 'name' ? 'selected' : ''} onClick={(e) => setSortField('name')}>Name</button>
 								</th>
 								<th></th>
 								<th></th>
 								<th>
-									<button onClick={(e) => setSortField('points')}>Points</button>
+									<button className={sortField === 'points' ? 'selected' : ''} onClick={(e) => setSortField('points')}>Points</button>
 								</th>
 							</tr>
 						</thead>

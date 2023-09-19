@@ -46,6 +46,7 @@ function AddUserForm() {
   return (
   	<>
 			<Dialog className="popup_wrapper" open={isOpen} onClose={() => setIsOpen(false)}>
+				<div className="popup_background" aria-hidden="true" />
 				<Dialog.Panel className="popup">
 					<Dialog.Title>Add User</Dialog.Title>
 					  <form onSubmit={handleSubmit}>

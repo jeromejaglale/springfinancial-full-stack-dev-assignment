@@ -10,6 +10,7 @@ function UserDetails({user, setUser}) {
   return (
   	<>
 			<Dialog className="popup_wrapper" open={user != null} onClose={() => setUser(null)}>
+				<div className="popup_background" aria-hidden="true" />
 				<Dialog.Panel className="popup">
 					<Dialog.Title>{user.name}</Dialog.Title>
 					<p className="points">{user.points} points</p>

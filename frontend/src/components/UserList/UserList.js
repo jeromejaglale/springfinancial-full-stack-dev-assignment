@@ -53,9 +53,7 @@ function UserList() {
 
   const { mutate } = useSWRConfig()
 
-	async function addPoint(userId, event) {
-		event.preventDefault();
-
+	async function addPoint(userId) {
 		const url = `${USER_ENDPOINT}/${userId}/add-point`;
 		const response = await fetch(url, {
 		    method: 'PUT'
@@ -68,9 +66,7 @@ function UserList() {
 		mutate(USER_ENDPOINT);
   }
 
-  async function removePoint(userId, event) {
-		event.preventDefault();
-
+  async function removePoint(userId) {
 		const url = `${USER_ENDPOINT}/${userId}/remove-point`;
 		const response = await fetch(url, {
 		    method: 'PUT'
@@ -83,9 +79,7 @@ function UserList() {
 		mutate(USER_ENDPOINT);
   }
 
-  async function deleteUser(userId, event) {
-		event.preventDefault();
-
+  async function deleteUser(userId) {
 		const url = `${USER_ENDPOINT}/${userId}`;
 		const response = await fetch(url, {
 		    method: 'DELETE'
@@ -151,16 +145,16 @@ function UserList() {
 							{userList.map(user =>
 								<tr key={user.id}>
 									<td>
-										<a href="" onClick={(e) => deleteUser(user.id, e)}>Delete</a>
+										<button onClick={() => deleteUser(user.id)}>Delete</button>
 									</td>
 									<td>
 										<a href="" onClick={(e) => showUser(user.id, e)}>{user.name}</a>
 									</td>
 									<td>
-										<a href="" onClick={(e) => addPoint(user.id, e)}>Add Point</a>
+										<button onClick={() => addPoint(user.id)}>Add Point</button>
 									</td>
 									<td>
-										<a href="" onClick={(e) => removePoint(user.id, e)}>Remove Point</a>
+										<button onClick={() => removePoint(user.id)}>Remove Point</button>
 									</td>
 									<td>{user.points}</td>
 								</tr>

@@ -140,11 +140,11 @@ function UserList() {
 								<th className="name">
 									<button className={sortField === 'name' ? 'selected' : ''} onClick={(e) => setSortField('name')}>Name</button>
 								</th>
-								<th></th>
-								<th></th>
 								<th className="points">
 									<button className={sortField === 'points' ? 'selected' : ''} onClick={(e) => setSortField('points')}>Points</button>
 								</th>
+								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -159,17 +159,17 @@ function UserList() {
 									<td className="name">
 										<a href="" onClick={(e) => showUser(user.id, e)}>{user.name}</a>
 									</td>
-									<td>
-										<button title="Add Point" class="icon" onClick={() => addPoint(user.id)}>
-											<Plus size={100} />
-										</button>
-									</td>
+									<td className="points">{user.points} points</td>
 									<td>
 										<button title="Remove Point" class="icon" onClick={() => removePoint(user.id)}>
 											<Minus size={100} />
 										</button>
 									</td>
-									<td className="points">{user.points} points</td>
+									<td>
+										<button title="Add Point" class="icon" onClick={() => addPoint(user.id)}>
+											<Plus size={100} />
+										</button>
+									</td>
 								</tr>
 							)}
 						</tbody>

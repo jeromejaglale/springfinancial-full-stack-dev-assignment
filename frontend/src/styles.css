@@ -32,7 +32,7 @@ p, h1, h2, h3, h4, h5, h6 {
 /* End of CSS Reset*/
 
 body {
-  padding: 1rem;
+  /*padding: 1rem;*/
   font-size: 1.2rem;
   min-width: 320px;
   max-width: 1080px;
@@ -44,7 +44,7 @@ body {
 
 button, input[type=submit] {
   padding: 5px 10px 3px 10px;
-  font-size: 1.5rem;
+  /*font-size: 1.5rem;*/
 }
 
 input[type="text"], input[type="number"] {
@@ -57,42 +57,67 @@ input[type="text"], input[type="number"] {
 button.icon {
   display: grid;
   place-content: center;
-  width: 48px;
+
+/*  width: 48px;
   height: 48px;
-  padding: 4px;
+*/
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+}
+
+
+#nameFilter {
+  width: 100%;
 }
 
 table {
   background-color: #a75265;
-  border-radius: 13px;
+  /*border-radius: 13px;*/
   padding: 15px;
+  /*width: calc(100% - 40px);*/
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
   border-collapse: collapse;
   overflow: hidden;
+  /*margin-right: auto;*/
+  /*margin-left: auto;*/
 }
 
 table tr {
   background-color: #febe7e;
 }
 
-table tr:last-child td {
-  padding-bottom: 30px;
-}
 
 table th {
   padding-top: 10px;
   font-weight: normal;
+  min-width: 44px;
 }
+
+table th.name, table th.points {
+  width: 100%;
+}
+
+table tr td {
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+
+table tr:last-child td {
+  /*padding-bottom: 30px;*/
+}
+
 
 table th button {
   border: none;
   cursor: pointer;
   background-color: #f3d3b6;
-  border-radius: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  /*border-radius: 1rem;*/
+  /*padding-left: 1rem;*/
+  /*padding-right: 1rem;*/
   color: gray;
 }
 
@@ -108,15 +133,11 @@ table th button.selected {
 }
 
 table tr td:first-child {
-  padding-left: 60px;
+  /*padding-left: 60px;*/
 }
 
 table tr td:last-child {
-  padding-right: 60px;
-}
-
-table td.name {
-  width: 100%;
+  /*padding-right: 60px;*/
 }
 
 table td.name a {
@@ -124,8 +145,8 @@ table td.name a {
   color: black;
   display: block;
   border-radius: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  /*padding-top: 0.5rem;*/
+  /*padding-bottom: 0.5rem;*/
 }
 
 table td.name a:hover {
@@ -133,14 +154,13 @@ table td.name a:hover {
 }
 
 table td.points {
-  width: 100%;
   white-space: nowrap;
 }
 
 table td.name, table td.points {
   text-align: center;
-  padding: 2px 40px 2px 40px;
-  font-size: 2rem;
+  /*padding: 2px 40px 2px 40px;*/
+  /*font-size: 2rem;*/
 }
 
 
@@ -149,7 +169,10 @@ table tbody button {
   background-color: #ec7263;
   border: 0;
   color: #febe7e;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
+  margin-right: auto;
+  margin-left: auto;
+
 }
 
 table tbody button:hover {
@@ -181,7 +204,7 @@ table tbody button:hover {
 }
 
 .popup h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
 }

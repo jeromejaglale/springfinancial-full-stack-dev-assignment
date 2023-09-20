@@ -137,12 +137,12 @@ function UserList() {
 						<thead>
 							<tr>
 								<th></th>
-								<th>
+								<th className="name">
 									<button className={sortField === 'name' ? 'selected' : ''} onClick={(e) => setSortField('name')}>Name</button>
 								</th>
 								<th></th>
 								<th></th>
-								<th>
+								<th className="points">
 									<button className={sortField === 'points' ? 'selected' : ''} onClick={(e) => setSortField('points')}>Points</button>
 								</th>
 							</tr>
@@ -156,7 +156,7 @@ function UserList() {
 										</button>
 
 									</td>
-									<td class="name">
+									<td className="name">
 										<a href="" onClick={(e) => showUser(user.id, e)}>{user.name}</a>
 									</td>
 									<td>
@@ -169,7 +169,7 @@ function UserList() {
 											<Minus size={100} />
 										</button>
 									</td>
-									<td class="points">{user.points} points</td>
+									<td className="points">{user.points} points</td>
 								</tr>
 							)}
 						</tbody>

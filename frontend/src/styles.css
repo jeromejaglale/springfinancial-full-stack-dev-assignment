@@ -71,6 +71,10 @@ button.icon {
   width: 100%;
 }
 
+#nameFilter:focus {
+  outline: none;
+}
+
 table {
   background-color: #a75265;
   /*border-radius: 13px;*/
@@ -115,10 +119,14 @@ table th button {
   border: none;
   cursor: pointer;
   background-color: #f3d3b6;
-  /*border-radius: 1rem;*/
+  border-radius: 6px;
   /*padding-left: 1rem;*/
   /*padding-right: 1rem;*/
   color: gray;
+  font-size: 1rem;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 table th button:hover {
@@ -155,6 +163,8 @@ table td.name a:hover {
 
 table td.points {
   white-space: nowrap;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 table td.name, table td.points {
@@ -232,4 +242,11 @@ table tbody button:hover {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2rem;
+}
+
+.add_user {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 10px;
 }

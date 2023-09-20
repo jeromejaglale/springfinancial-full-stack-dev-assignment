@@ -67,7 +67,7 @@ function AddUserForm() {
 				</Dialog.Panel>
 			</Dialog>
 
-			<button onClick={() => setIsOpen(true)}>Add User</button>
+			<button className="add_user" onClick={() => setIsOpen(true)}>Add User</button>
   	</>
   );
 }

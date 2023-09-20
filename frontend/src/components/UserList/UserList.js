@@ -127,7 +127,7 @@ function UserList() {
 		  )}
 
 		  {/* user list */}
-			{userList && (
+			{userList && (userList.length > 0 || nameFilter) && (
 	      <>
 					<form>
 					  <input type="text" id="nameFilter" value={nameFilter} onChange={(e) => setNameFilter(e.target.value)} placeholder="Filter by name" />

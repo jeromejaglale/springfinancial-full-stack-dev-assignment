@@ -14,7 +14,7 @@ The frontend uses by default the backend instance running at https://sf-fsd-back
 
 To install your own backend, in the `backend` folder:
 - copy `.env.example` to `.env`, then update the database credentials: `DB_HOST`, `DB_PORT`, etc. 
-- setup the Laravel app:
+- set up the Laravel app:
 ```bash
 composer install
 php artisan key:generate

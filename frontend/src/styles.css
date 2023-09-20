@@ -111,7 +111,7 @@ table tr td {
 }
 
 table tr:last-child td {
-  /*padding-bottom: 30px;*/
+  padding-bottom: 10px;
 }
 
 
@@ -140,21 +140,11 @@ table th button.selected {
   cursor: default;
 }
 
-table tr td:first-child {
-  /*padding-left: 60px;*/
-}
-
-table tr td:last-child {
-  /*padding-right: 60px;*/
-}
-
 table td.name a {
   text-decoration: none;
   color: black;
   display: block;
-  border-radius: 1rem;
-  /*padding-top: 0.5rem;*/
-  /*padding-bottom: 0.5rem;*/
+  border-radius: 6px;
 }
 
 table td.name a:hover {
@@ -249,4 +239,40 @@ table tbody button:hover {
   margin-right: auto;
   display: block;
   margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  #nameFilter {
+    border-radius: 6px;
+    border-style: solid;
+  }
+
+  table {
+    border-radius: 6px;
+  }
+
+  table tr td:first-child {
+    padding-left: 1rem;
+  }
+
+  table tr td:last-child {
+  padding-right: 1rem;
+  }
+
+  button.icon {
+    margin-left: 1rem;
+  }
+
+  table td.name a {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+  }
+
+  .add_user {
+    margin-right: 0;
+  }
 }

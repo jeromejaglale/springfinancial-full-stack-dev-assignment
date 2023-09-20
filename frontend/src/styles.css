@@ -32,7 +32,6 @@ p, h1, h2, h3, h4, h5, h6 {
 /* End of CSS Reset*/
 
 body {
-  /*padding: 1rem;*/
   font-size: 1.2rem;
   min-width: 320px;
   max-width: 1080px;
@@ -44,7 +43,6 @@ body {
 
 button, input[type=submit] {
   padding: 5px 10px 3px 10px;
-  /*font-size: 1.5rem;*/
 }
 
 input[type="text"], input[type="number"] {
@@ -57,10 +55,6 @@ input[type="text"], input[type="number"] {
 button.icon {
   display: grid;
   place-content: center;
-
-/*  width: 48px;
-  height: 48px;
-*/
   width: 40px;
   height: 40px;
   padding: 0px;
@@ -77,22 +71,17 @@ button.icon {
 
 table {
   background-color: #a75265;
-  /*border-radius: 13px;*/
   padding: 15px;
-  /*width: calc(100% - 40px);*/
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
   border-collapse: collapse;
   overflow: hidden;
-  /*margin-right: auto;*/
-  /*margin-left: auto;*/
 }
 
 table tr {
   background-color: #febe7e;
 }
-
 
 table th {
   padding-top: 10px;
@@ -120,8 +109,6 @@ table th button {
   cursor: pointer;
   background-color: #f3d3b6;
   border-radius: 6px;
-  /*padding-left: 1rem;*/
-  /*padding-right: 1rem;*/
   color: gray;
   font-size: 1rem;
   padding-top: 2px;
@@ -159,8 +146,6 @@ table td.points {
 
 table td.name, table td.points {
   text-align: center;
-  /*padding: 2px 40px 2px 40px;*/
-  /*font-size: 2rem;*/
 }
 
 
@@ -169,7 +154,6 @@ table tbody button {
   background-color: #ec7263;
   border: 0;
   color: #febe7e;
-  /*margin-right: 10px;*/
   margin-right: auto;
   margin-left: auto;
 
@@ -241,6 +225,7 @@ table tbody button:hover {
   margin-top: 10px;
 }
 
+/* styles changes for tablet and desktop */
 @media (min-width: 768px) {
   body {
     padding: 1rem;

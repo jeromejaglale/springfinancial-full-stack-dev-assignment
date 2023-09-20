@@ -152,7 +152,7 @@ function UserList() {
 								<tr key={user.id}>
 									<td>
 										<button title="Remove User" class="icon" onClick={() => deleteUser(user.id)}>
-											<X size={100} />
+											<X size={40} />
 										</button>
 
 									</td>
@@ -162,12 +162,12 @@ function UserList() {
 									<td className="points">{user.points} points</td>
 									<td>
 										<button title="Remove Point" class="icon" onClick={() => removePoint(user.id)}>
-											<Minus size={100} />
+											<Minus size={40} />
 										</button>
 									</td>
 									<td>
 										<button title="Add Point" class="icon" onClick={() => addPoint(user.id)}>
-											<Plus size={100} />
+											<Plus size={40} />
 										</button>
 									</td>
 								</tr>

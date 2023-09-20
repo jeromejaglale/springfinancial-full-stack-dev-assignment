@@ -256,6 +256,7 @@ table tbody button:hover {
 
   table tr td:first-child {
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   table tr td:last-child {
@@ -271,7 +272,6 @@ table tbody button:hover {
     padding-bottom: 0.5rem;
 
   }
-
   .add_user {
     margin-right: 0;
   }

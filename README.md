@@ -22,4 +22,4 @@ php artisan -q storage:link
 php artisan migrate
 ```
 
-Finally, in `frontend/src/constants.js`, update `USER_ENDPOINT`: `<your webserver url>/api/user`
+Finally, in `frontend/src/constants.js`, update `USER_ENDPOINT` to `<your webserver url>/api/user`

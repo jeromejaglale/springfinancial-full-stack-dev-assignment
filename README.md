@@ -9,6 +9,8 @@ npm install
 npx parcel src/index.html
 ```
 
+Then go to http://localhost:1234/
+
 ### Backend
 The frontend uses by default the backend instance running at https://sf-fsd-backend.jeromejaglale.me/api/user
 

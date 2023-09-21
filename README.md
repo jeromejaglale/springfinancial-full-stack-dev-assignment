@@ -17,7 +17,8 @@ Note: the backend at https://sf-fsd-backend.jeromejaglale.me/api/user is used by
 
 ### Backend
 If you want to install your own backend, from the `backend` folder:
-- copy `.env.example` to `.env`, then update the database credentials: `DB_HOST`, `DB_PORT`, etc. 
+- copy `.env.example` to `.env`
+- update the database credentials in `.env`: `DB_HOST`, `DB_PORT`, etc. 
 - set up the Laravel app:
 ```bash
 composer install

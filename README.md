@@ -25,3 +25,11 @@ php artisan migrate
 ```
 
 Finally, in `frontend/src/constants.js`, update `USER_ENDPOINT` to `<your webserver url>/api/user`
+
+## API endpoints
+- GET `/api/user`: list of users
+- GET `/api/user/{user_id}`: get user by `id`
+- POST `/api/user` with JSON body (`name`, `age`, `address`): create  new user
+- DELETE `/api/user/{user_id}`: delete user
+- PUT `/api/user/{user_id}/add-point`: add point to user
+- PUT `/api/user/{user_id}/remove-point`: remove point from user

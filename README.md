@@ -52,3 +52,11 @@ Finally, to use this backend with the frontend, in `frontend/src/constants.js`, 
 ## Backend tests
 From the `backend` folder, run `php artisan test`. This will run the tests in `tests/Feature/UserTest.php`, testing each endpoint.
 
+## Notes
+With more time, I would have added:
+- error handling: for the backend, requiring a non-empty name, an integer for the age. For the frontend if some AJAX requests fail or return unexpected content
+- frontend tests, for example to check the popups are displayed when clicking on the buttons, and the functionnality of the delete/add point/remove point buttons.
+- micro-animations when adding a new user, and adding/removing a point, in order to make it clear that the interaction worked
+- an animation for user re-ordering when sorted by score. It's currently barely noticeable and very confusing.
+- break up of the CSS into the corresponding components
+- highlight of the top three players, in some way

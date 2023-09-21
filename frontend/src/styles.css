@@ -230,9 +230,16 @@ table tbody button:hover {
   body {
     padding: 1rem;
   }
+
   #nameFilter {
     border-radius: 6px;
     border-style: solid;
+  }
+
+  .message {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
   }
 
   table {

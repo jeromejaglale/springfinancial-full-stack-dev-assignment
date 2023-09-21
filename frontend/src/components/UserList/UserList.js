@@ -119,15 +119,15 @@ function UserList() {
 		  )}
 
 	    {isLoading && (
-		    <p>Loading users…</p>
+		    <p className="message">Loading users…</p>
 		  )}
 
 	    {error && (
-		    <p>Sorry, the users could not be retrieved.</p>
+		    <p className="message">Sorry, the users could not be retrieved.</p>
 		  )}
 
 		  {/* user list */}
-			{userList && (userList.length > 0 || nameFilter) && (
+			{userList && false && (userList.length > 0 || nameFilter) && (
 	      <>
 					<form>
 					  <input type="text" id="nameFilter" value={nameFilter} onChange={(e) => setNameFilter(e.target.value)} placeholder="Filter by name" />

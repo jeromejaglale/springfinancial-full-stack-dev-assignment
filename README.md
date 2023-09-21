@@ -54,9 +54,9 @@ From the `backend` folder, run `php artisan test`. This will run the tests in `t
 
 ## Notes
 With more time, I would have added:
-- error handling: for the backend, requiring a non-empty name, an integer for the age. For the frontend if some AJAX requests fail or return unexpected content
-- frontend tests, for example to check the popups are displayed when clicking on the buttons, and the functionnality of the delete/add point/remove point buttons.
-- micro-animations when adding a new user, and adding/removing a point, in order to make it clear that the interaction worked
-- an animation for user re-ordering when sorted by score. It's currently barely noticeable and very confusing.
-- break up of the CSS into the corresponding components
-- highlight of the top three players, in some way
+- error handling: for the backend, requiring a non-empty name and an integer for the age. For the frontend, when AJAX requests fail, or return unexpected content
+- frontend tests, for example to check the popups are displayed when clicking on the buttons, and the functionnality of the delete button, "add point" button, and "remove point" button
+- micro-animations when adding a new user, and when adding or removing a point, in order to make it clear that the interaction happened
+- an animation when re-ordering the users, when sorted by score. It's currently barely noticeable and very confusing when adding two points to the same user, and that user position in the list changes, for example.
+- break up the CSS into the corresponding components for reusability
+- highlight of the top three players

@@ -40,3 +40,7 @@ Finally, in `frontend/src/constants.js`, change `USER_ENDPOINT` to `<your webser
 ## Backend tests
 From the `backend` folder, run `php artisan test`. This will run the tests in `tests/Feature/UserTest.php`, testing each endpoint.
 
+
+
+Any questions? Contact me at jerome.jaglale@gmail.com. Thank you!
+

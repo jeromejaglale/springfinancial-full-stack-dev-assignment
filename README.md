@@ -1,8 +1,18 @@
 # Spring Financial Full Stack Developer Assignement - Leaderboard Application
 
-## Running the application
+Go to https://sf-fsd-frontend.jeromejaglale.me
+
+To run the application locally, see the instructions below.
+
+Any questions? Contact me at jerome.jaglale@gmail.com. Thank you!
+
+## Running the application locally
 
 Clone this GitHub repository to your local machine.
+
+```
+git clone https://github.com/jeromejaglale/springfinancial-full-stack-dev-assignment.git
+```
 
 ### Frontend
 From the `frontend` folder:
@@ -27,7 +37,9 @@ php artisan -q storage:link
 php artisan migrate
 ```
 
-Finally, in `frontend/src/constants.js`, change `USER_ENDPOINT` to `<your webserver url>/api/user`
+Check it's working by pointing your browser to `<your webserver url>/api/user`. It should return some empty JSON.
+
+Finally, to use this backend with the frontend, in `frontend/src/constants.js`, change `USER_ENDPOINT` to `<your webserver url>/api/user`
 
 ## Backend API endpoints
 - GET `/api/user`: list of users
@@ -39,8 +51,4 @@ Finally, in `frontend/src/constants.js`, change `USER_ENDPOINT` to `<your webser
 
 ## Backend tests
 From the `backend` folder, run `php artisan test`. This will run the tests in `tests/Feature/UserTest.php`, testing each endpoint.
-
-
-
-Any questions? Contact me at jerome.jaglale@gmail.com. Thank you!
 

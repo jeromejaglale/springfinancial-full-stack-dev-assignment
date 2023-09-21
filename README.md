@@ -27,7 +27,7 @@ php artisan -q storage:link
 php artisan migrate
 ```
 
-Finally, in `frontend/src/constants.js`, update `USER_ENDPOINT` to `<your webserver url>/api/user`
+Finally, in `frontend/src/constants.js`, change `USER_ENDPOINT` to `<your webserver url>/api/user`
 
 ## Backend API endpoints
 - GET `/api/user`: list of users
@@ -38,5 +38,5 @@ Finally, in `frontend/src/constants.js`, update `USER_ENDPOINT` to `<your webser
 - PUT `/api/user/{user_id}/remove-point`: remove point from user
 
 ## Backend tests
-From the `backend` folder, run `php artisan test`. This will run the feature tests in `tests/Feature/UserTest.php`, testing each endpoint.
+From the `backend` folder, run `php artisan test`. This will run the tests in `tests/Feature/UserTest.php`, testing each endpoint.
 

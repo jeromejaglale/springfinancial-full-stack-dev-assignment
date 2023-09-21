@@ -28,8 +28,8 @@ function filterAndSortUserList(userList, nameFilter, sortField) {
 		}
 		else {
 			userList.sort((u1, u2) => {
-				value1 = u1.name.toUpperCase();
-				value2 = u2.name.toUpperCase();
+				const value1 = u1.name.toUpperCase();
+				const value2 = u2.name.toUpperCase();
 
 				if (value1 < value2) {
 				  return -1;

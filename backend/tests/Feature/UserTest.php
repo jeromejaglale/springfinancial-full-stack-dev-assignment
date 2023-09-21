@@ -15,7 +15,7 @@ class UserTest extends TestCase
 
     public function test_create_user()
     {
-    	// test POST entry point
+    	// test POST endpoint
     	$response =  $this->postJson('/api/user', ['name' => $this->userName, 'age' => $this->userAge, 'address' => $this->userAddress]);    	
 		$response->assertStatus(201)->assertJson([
             'name' => $this->userName,
@@ -25,7 +25,7 @@ class UserTest extends TestCase
 
 		$new_user_id = $response['id'];
 
-    	// test GET user by id entry point
+    	// test GET user by id endpoint
     	$response2 = $this->getJson('/api/user/' . $new_user_id);
 		$response2->assertStatus(200)->assertJson([
             'name' => $this->userName,
@@ -36,7 +36,7 @@ class UserTest extends TestCase
 
     public function test_user_list()
     {
-    	// test GET user list entry point
+    	// test GET user list endpoint
 
     	// check no user
         $response0 = $this->get('/api/user');
@@ -55,7 +55,7 @@ class UserTest extends TestCase
         $user_id = $response2[0]['id'];        
 		$this->assertEquals($user_id, $new_user_id);
 
-    	// test DELETE user by id entry point
+    	// test DELETE user by id endpoint
 
 		// delete user
     	$response3 = $this->deleteJson('/api/user/' . $new_user_id);
